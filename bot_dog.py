@@ -1,6 +1,7 @@
 from telegram.ext import Updater, CommandHandler
 import requests
 import re 
+import config
 
 
 
@@ -35,7 +36,7 @@ def bop(bot, update):
 
 
 def main():
-   updater = Updater('724064540:AAFb9bS3quvsMI3eAyq2uBGDbQTc-2MjV0w')
+   updater = Updater(config.api_token, use_context=True)
    db = updater.dispatcher
    db.add_handler(CommandHandler('bop', bop))
    db.add_handler(CommandHandler('help', help_))
