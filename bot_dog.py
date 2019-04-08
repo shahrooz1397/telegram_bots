@@ -4,6 +4,15 @@ import re
 
 
 
+def help_(update, context):
+    h = '''
+        hello {} 
+        commands list:
+        /bop to generate new image
+        /help to show this text
+    '''.format(update.message.from_user['first_name'])
+    context.bot.send_message(chat_id=update.message.chat_id, text=h)
+
 
 def get_url():
     contents = requests.get('https://random.dog/woof.json').json() 
@@ -29,6 +38,7 @@ def main():
    updater = Updater('724064540:AAFb9bS3quvsMI3eAyq2uBGDbQTc-2MjV0w')
    db = updater.dispatcher
    db.add_handler(CommandHandler('bop', bop))
+   db.add_handler(CommandHandler('help', help_))
    updater.start_polling()
    updater.idle()
 
