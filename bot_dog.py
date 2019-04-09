@@ -1,11 +1,11 @@
 from telegram.ext import Updater, CommandHandler
 import requests
 import re 
-from boto.s3.connection import S3Connection
-import os
+#from boto.s3.connection import S3Connection
+#import os
 
 
-token = S3Connection(os.environ['API_TOKEN'])
+#token = S3Connection(os.environ['API_TOKEN'])
 
 def help_(update, context):
     h = '''
@@ -38,7 +38,7 @@ def bop(bot, update):
 
 
 def main():
-   updater = Updater(token, use_context=True)
+   updater = Updater('764368386:AAHfzXHnhFRKeWTWfo6-WR31N6ivY9ZkwpI'token, use_context=True)
    db = updater.dispatcher
    db.add_handler(CommandHandler('bop', bop))
    db.add_handler(CommandHandler('help', help_))
