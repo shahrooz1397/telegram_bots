@@ -38,7 +38,7 @@ def bop(bot, update):
 
 
 def main():
-   updater = Updater('764368386:AAHfzXHnhFRKeWTWfo6-WR31N6ivY9ZkwpI'token, use_context=True)
+   updater = Updater('764368386:AAHfzXHnhFRKeWTWfo6-WR31N6ivY9ZkwpI', use_context=True)
    db = updater.dispatcher
    db.add_handler(CommandHandler('bop', bop))
    db.add_handler(CommandHandler('help', help_))
