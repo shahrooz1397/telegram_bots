@@ -2,6 +2,7 @@ from telegram.ext import Updater, CommandHandler
 import requests
 import re 
 from boto.s3.connection import S3Connection
+import os
 
 
 token = S3Connection(os.environ['API_TOKEN'])
