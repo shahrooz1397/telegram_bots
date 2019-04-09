@@ -1,9 +1,10 @@
 from telegram.ext import Updater, CommandHandler
 import requests
 import re 
-import config
+from boto.s3.connection import S3Connection
 
 
+token = S3Connection(os.environ['DOG_TOKEN'])
 
 def help_(update, context):
     h = '''
@@ -36,7 +37,7 @@ def bop(bot, update):
 
 
 def main():
-   updater = Updater(config.api_token, use_context=True)
+   updater = Updater(token, use_context=True)
    db = updater.dispatcher
    db.add_handler(CommandHandler('bop', bop))
    db.add_handler(CommandHandler('help', help_))
