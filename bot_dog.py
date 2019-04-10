@@ -5,7 +5,7 @@ from boto.s3.connection import S3Connection
 import os
 
 
-token = S3Connection(os.environ['API_TOKEN'])
+token = os.environ['API_TOKEN']
 print(token)
 
 def help_(update, context):
