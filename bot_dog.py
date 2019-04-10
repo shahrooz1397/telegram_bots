@@ -6,6 +6,7 @@ import os
 
 
 token = S3Connection(os.environ['API_TOKEN'])
+print(token)
 
 def help_(update, context):
     h = '''
