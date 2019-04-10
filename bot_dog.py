@@ -6,7 +6,6 @@ import os
 
 
 token = os.environ['API_TOKEN']
-print(token)
 
 def help_(update, context):
     h = '''
@@ -32,10 +31,10 @@ def get_image_url():
     return url
 
 
-def bop(bot, update):
+def bop(update, context):
     url = get_image_url()
     chat_id = update.message.chat_id 
-    bot.send_photo(chat_id=chat_id, photo=url)
+    context.bot.send_photo(chat_id=chat_id, photo=url)
 
 
 def main():
