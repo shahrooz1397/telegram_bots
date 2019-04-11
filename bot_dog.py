@@ -21,6 +21,8 @@ def get_url():
     url = contents['url']
     return url 
 
+
+
 def get_image_url():
     allowed_extension = ['jpg','jpeg','png']
     file_extension = ''
@@ -35,6 +37,7 @@ def bop(update, context):
     chat_id = update.message.chat_id 
     context.bot.send_photo(chat_id=chat_id, photo=url)
 
+    
 
 def main():
    updater = Updater(token, use_context=True)
