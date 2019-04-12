@@ -31,7 +31,7 @@ def get_image_url():
         file_extension = re.search("([^.]*)$",url).group(1).lower()
     return url
 
-
+@send_action(ChatAction.UPLOAD_PHOTO)
 def bop(update, context):
     url = get_image_url()
     chat_id = update.message.chat_id 
