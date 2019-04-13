@@ -2,17 +2,9 @@ from telegram.ext import Updater, CommandHandler
 import requests
 import re 
 import os
-from functools import wraps
 
 
-def send_action(action):
 
-    def decorator(func):
-        @wraps(func)
-        def command_func(update, context, *args, **kwargs):
-            context.bot.send_chat_action(chat_id=update.effective_message.chat_id, action=action)
-            return func(update, context, *args, **kwargs)
-    return decorator
 
 
 
@@ -43,7 +35,6 @@ def get_image_url():
         file_extension = re.search("([^.]*)$",url).group(1).lower()
     return url
 
-@send_action(ChatAction.UPLOAD_PHOTO)
 def bop(update, context):
     url = get_image_url()
     chat_id = update.message.chat_id 
