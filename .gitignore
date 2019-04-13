@@ -3,6 +3,7 @@ config.py
 __pycache__/
 *.py[cod]
 *$py.class
+pyro/my_account.session
 
 # C extensions
 *.so
