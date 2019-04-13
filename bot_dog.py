@@ -1,4 +1,5 @@
 from telegram.ext import Updater, CommandHandler
+import telegram
 import requests
 import re 
 import os
@@ -17,7 +18,9 @@ def help_(update, context):
         /bop to generate new image
         /help to show this text
     '''.format(update.message.from_user['first_name'])
+    context.bot.send_chat_action(update.message.chat_id, action=telegram.ChatAction.TYPING)
     context.bot.send_message(chat_id=update.message.chat_id, text=h)
+
 
 
 def get_url():
@@ -38,6 +41,7 @@ def get_image_url():
 def bop(update, context):
     url = get_image_url()
     chat_id = update.message.chat_id 
+    context.bot.send_chat_action(chat_id, action=telegram.ChatAction.UPLOAD_PHOTO)
     context.bot.send_photo(chat_id=chat_id, photo=url)
 
     
