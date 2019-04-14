@@ -14,8 +14,6 @@ token = os.environ['API_TOKEN']
 def unknown(update, context):
     context.bot.send_message(chat_id=update.message.chat_id, text="Sorry, I didn't understand that command.")
 
-unknown_handler = MessageHandler(Filters.command, unknown)
-dispatcher.add_handler(unknown_handler)
 
 def help_(update, context):
     h = '''
