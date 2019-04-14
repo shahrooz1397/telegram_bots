@@ -22,7 +22,7 @@ def help_(update, context):
         /bop to generate new image
         /help to show this text
     '''.format(update.message.from_user['first_name'])
-    context.bot.send_chat_action(update.message.chat_id, action=telegram.ChatAction.TYPING)
+    #context.bot.send_chat_action(update.message.chat_id, action=telegram.ChatAction.TYPING)
     context.bot.send_message(chat_id=update.message.chat_id, text=h)
 
 
