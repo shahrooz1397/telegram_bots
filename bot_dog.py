@@ -1,4 +1,5 @@
-from telegram.ext import Updater, CommandHandler, Filters, MessageHandler
+from telegram.ext import Updater, CommandHandler,
+from telegram.ext import Filters, MessageHandler
 import telegram
 import requests
 import re 
@@ -53,7 +54,7 @@ def bop(update, context):
 def main():
    updater = Updater(token, use_context=True)
    db = updater.dispatcher
-   db.add_error_handler(MessageHandler(Filters.command, unknown))
+   db.add_handler(MessageHandler(Filters.command, unknown))
    db.add_handler(CommandHandler('bop', bop))
    db.add_handler(CommandHandler('help', help_))
    updater.start_polling()
