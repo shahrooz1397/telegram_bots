@@ -53,7 +53,7 @@ def bop(update, context):
 def main():
    updater = Updater(token, use_context=True)
    db = updater.dispatcher
-   db.add_error_handler(MessageaHandler(Filters.command, unknown))
+   db.add_error_handler(MessageHandler(Filters.command, unknown))
    db.add_handler(CommandHandler('bop', bop))
    db.add_handler(CommandHandler('help', help_))
    updater.start_polling()
