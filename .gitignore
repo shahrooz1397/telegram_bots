@@ -12,6 +12,7 @@ pyro/my_account.session
 # Distribution / packaging
 .Python
 build/
+pyro/
 develop-eggs/
 dist/
 downloads/
