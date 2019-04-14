@@ -53,9 +53,9 @@ def bop(update, context):
 def main():
    updater = Updater(token, use_context=True)
    db = updater.dispatcher
-   db.add_handler(MessageHandler(Filters.command, unknown))
    db.add_handler(CommandHandler('bop', bop))
    db.add_handler(CommandHandler('help', help_))
+   db.add_handler(MessageHandler(Filters.command, unknown))
    updater.start_polling()
    updater.idle()
 
