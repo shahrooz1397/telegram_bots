@@ -1,4 +1,4 @@
-from telegram.ext import Updater, CommandHandler
+from telegram.ext import Updater, CommandHandler, Filters, MessageHandler
 import telegram
 import requests
 import re 
@@ -10,6 +10,12 @@ import os
 
 
 token = os.environ['API_TOKEN']
+
+def unknown(update, context):
+    context.bot.send_message(chat_id=update.message.chat_id, text="Sorry, I didn't understand that command.")
+
+unknown_handler = MessageHandler(Filters.command, unknown)
+dispatcher.add_handler(unknown_handler)
 
 def help_(update, context):
     h = '''
@@ -49,6 +55,7 @@ def bop(update, context):
 def main():
    updater = Updater(token, use_context=True)
    db = updater.dispatcher
+   db.add_error_handler(MessageaHandler(Filters.command, unknown))
    db.add_handler(CommandHandler('bop', bop))
    db.add_handler(CommandHandler('help', help_))
    updater.start_polling()
