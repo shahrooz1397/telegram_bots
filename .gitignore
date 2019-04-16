@@ -4,7 +4,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 pyro/my_account.session
-
+pyro/764368386.session
 # C extensions
 *.so
 *.session
