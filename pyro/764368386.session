@@ -12,8 +12,14 @@
         "bnRQclANhzN39Om4S6ZNJPSDpC0dwjj22QfVzEHHQ=="
     ],
     "user_id": 764368386,
-    "date": 1555240711,
-    "peers_by_id": {},
-    "peers_by_username": {},
+    "date": 1555576643,
+    "peers_by_id": {
+        "764368386": 8178248286881332941,
+        "478517945": 3193735871030625397
+    },
+    "peers_by_username": {
+        "my_chatbot_bot": 764368386,
+        "m_2730": 478517945
+    },
     "peers_by_phone": {}
 }
