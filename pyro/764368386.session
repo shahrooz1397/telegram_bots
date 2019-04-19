@@ -12,7 +12,8 @@
         "bnRQclANhzN39Om4S6ZNJPSDpC0dwjj22QfVzEHHQ=="
     ],
     "user_id": 764368386,
-    "date": 1555609521,
+    "date": 1555702620,
+    "is_bot": true,
     "peers_by_id": {
         "764368386": 8178248286881332941,
         "478517945": 3193735871030625397

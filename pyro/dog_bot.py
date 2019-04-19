@@ -1,12 +1,37 @@
-from pyrogram import Client
-import os 
+from pyrogram import Client, Filters
+import requests
+import re
+#import os 
 
 
-app = Client('my_account')
-app.start()
+app = Client('764368386:AAGCdoJj4A1WhIRG_cFk0_25FfC1I9w8H9c')
 
-print(app.get_me())
+def get_url():
+    content=requests.get('https://random.dog/woof.json').json()
+    url = content['url']
+    return url
 
-app.send_message('me', 'hi there, im using pyrogram!')
+def get_image_url():
+    allowed_extension = ['jpg','jpeg','png']
+    file_extension = ''
+    while file_extension not in allowed_extension:
+        url = get_url()
+        file_extension = re.search("([^.]*)$",url).group(1).lower()
+    return url
 
-app.stop()
+
+
+@app.on_message(Filters.command('bop'))
+def bop(client, message):
+    url = get_image_url()
+    print(url)
+    message.reply_photo(url)
+
+@app.on_message(~Filters.command(['start', 'help', 'bop']))
+def unknown(client, message):
+    message.reply('i don`t understand this command ')
+    
+ 
+app.run()
+
+
