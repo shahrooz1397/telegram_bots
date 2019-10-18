@@ -4,7 +4,7 @@ import re
 #import os 
 
 
-app = Client('764368386:AAGCdoJj4A1WhIRG_cFk0_25FfC1I9w8H9c')
+app = Client('7643683h86:AAGCdoJj4C1I8H9c')
 
 def get_url():
     content=requests.get('https://random.dog/woof.json').json()
