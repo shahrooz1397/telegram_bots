@@ -1,1 +1,2 @@
-# sh_5473
+Random dog pic
+This bot will generate dog pictures randomly
